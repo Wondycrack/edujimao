@@ -1,11 +1,12 @@
 class ProvidersController < ApplicationController
-    
+
   def index
     # if params[:query].present?
     #   @providers = provider.search_by_speciality_description_project_type_user(params[:query])
     # else
        @providers = Provider.all
     # end
+      raise
   end
 
   def new
@@ -16,10 +17,13 @@ class ProvidersController < ApplicationController
     # @provider = provider.new(name: params[:name], address: params[:address], rating: params[:rating])
     # new record with values from form
     @provider = Provider.new(provider_params)
+    @provider.user = User.first
 
     if @provider.save
-        redirect_to provider_path(@provider)
+        redirect_to providers_path
+        # raise
     else
+     # puts @provider.errors.full_messages
         render :new
     end
   end
@@ -51,7 +55,7 @@ class ProvidersController < ApplicationController
   private
 
   def provider_params
-    params.require(:provider).permit(:description, :product_type, :age_group, :curriculum_type, :cost, :user)
+    params.require(:provider).permit(:description, :product_type, :age_group, :curriculum_type, :cost, :user_id)
   end
 
 end
