@@ -10,10 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_091257) do
+ActiveRecord::Schema.define(version: 2020_08_11_062653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "providers", force: :cascade do |t|
+    t.string "product_type"
+    t.string "description"
+    t.string "age_group"
+    t.string "curriculum_type"
+    t.integer "cost"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_providers_on_user_id"
+  end
+
+  create_table "school_subjects", force: :cascade do |t|
+    t.bigint "subject_id", null: false
+    t.bigint "school_id", null: false
+    t.string "subject_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["school_id"], name: "index_school_subjects_on_school_id"
+    t.index ["subject_id"], name: "index_school_subjects_on_subject_id"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.string "school_type"
+    t.string "curiculum_type"
+    t.string "location"
+    t.integer "student_enrolment"
+    t.integer "act_mean"
+    t.integer "sat_reading"
+    t.integer "sat_math"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "service_requests", force: :cascade do |t|
+    t.bigint "provider_id", null: false
+    t.bigint "school_id", null: false
+    t.boolean "confirmed", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["provider_id"], name: "index_service_requests_on_provider_id"
+    t.index ["school_id"], name: "index_service_requests_on_school_id"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +78,9 @@ ActiveRecord::Schema.define(version: 2020_08_10_091257) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "providers", "users"
+  add_foreign_key "school_subjects", "schools"
+  add_foreign_key "school_subjects", "subjects"
+  add_foreign_key "service_requests", "providers"
+  add_foreign_key "service_requests", "schools"
 end
