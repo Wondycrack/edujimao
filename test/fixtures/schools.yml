@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  school_type: MyString
+  curiculum_type: MyString
+  location: MyString
+  student_enrolment: 1
+  act_mean: 1
+  sat_reading: 1
+  sat_math: 1
+  school_subject: one
+
+two:
+  name: MyString
+  school_type: MyString
+  curiculum_type: MyString
+  location: MyString
+  student_enrolment: 1
+  act_mean: 1
+  sat_reading: 1
+  sat_math: 1
+  school_subject: two
