@@ -1,16 +1,16 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row justify-content-center">
-    <div class="col-6">
+    <div class="col-6"> -->
       <h1>Add a service</h1>
 
         <%= simple_form_for (@product) do |f| %>
           <%= f.input :description %>
-          <%= f.input :curriculum_type %>
+          <%= f.input :curriculum_type, collection: ["Core Curriculum", "Supplemental"] %>
           <%= f.input :cost %>
           <%= f.input :age_group %>
           <%= f.input :product_type %>
           <%= f.submit "Add"%>
         <% end %>
-    </div>
+<!--     </div>
   </div>
-</div>
+</div> -->

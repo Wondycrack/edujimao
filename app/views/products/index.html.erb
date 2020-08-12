@@ -7,7 +7,7 @@
 <p><%= product.description %></p>
 <p><%= product.curriculum_type %></p>
 
-<% if current_user == product.user_id %>
-  <%= link_to 'delete', product_path(product.id), method: :delete %>
-<% end %>
+  <% if current_user.id == product.user_id %>
+    <%= link_to 'delete', product_path(product.id), method: :delete %>
+  <% end %>
 <%end  %>

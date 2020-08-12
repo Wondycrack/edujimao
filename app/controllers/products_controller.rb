@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
         redirect_to products_path
         # raise
     else
-     # puts @provider.errors.full_messages
+     puts @provider.errors.full_messages
         render :new
     end
   end
@@ -41,6 +41,7 @@ class ProductsController < ApplicationController
     end
 
     def show
+      @schools = School.all
       @product = Product.find(params[:id])
       @product.user = current_user
 
