@@ -10,5 +10,5 @@ class Product < ApplicationRecord
   validates :curriculum_type, inclusion: {in: CURRICULUM_TYPE}
   validates :age_group, inclusion: {in: AGE_GROUP}
   validates :cost, inclusion: {in: COST}
-  validates :subject, inclusion: {in: SUBJECT}
+  # validates :subject, inclusion: {in: SUBJECT}
 end
