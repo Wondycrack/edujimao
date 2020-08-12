@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_11_062653) do
+ActiveRecord::Schema.define(version: 2020_08_11_112827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "providers", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string "product_type"
     t.string "description"
     t.string "age_group"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_08_11_062653) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_providers_on_user_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "school_subjects", force: :cascade do |t|
@@ -51,12 +51,12 @@ ActiveRecord::Schema.define(version: 2020_08_11_062653) do
   end
 
   create_table "service_requests", force: :cascade do |t|
-    t.bigint "provider_id", null: false
     t.bigint "school_id", null: false
     t.boolean "confirmed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["provider_id"], name: "index_service_requests_on_provider_id"
+    t.bigint "product_id", null: false
+    t.index ["product_id"], name: "index_service_requests_on_product_id"
     t.index ["school_id"], name: "index_service_requests_on_school_id"
   end
 
@@ -78,9 +78,9 @@ ActiveRecord::Schema.define(version: 2020_08_11_062653) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "providers", "users"
+  add_foreign_key "products", "users"
   add_foreign_key "school_subjects", "schools"
   add_foreign_key "school_subjects", "subjects"
-  add_foreign_key "service_requests", "providers"
+  add_foreign_key "service_requests", "products"
   add_foreign_key "service_requests", "schools"
 end
