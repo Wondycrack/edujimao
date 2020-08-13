@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :create, :show, :destroy]
 
   #? not sure!!!
-  resources :service_requests, only: [:new, :create]
+  resources :service_requests, only: [:new, :create, :index, :destroy]
 
 end

@@ -6,8 +6,9 @@
 <p><%= @product.age_group %></p>
 <p><%= @product.cost %></p>
 
+<%= link_to 'View all requests', service_requests_path %>
 <!-- <%#= link_to 'All products', products_path %> | <%#= link_to 'Book', products_path %> -->
 <p><h1>Potential Schools to partner with</h1></p>
 <% @schools.each do |school| %>
-<p><%= school.name %> <%= link_to 'Connect', products_path %> </p>
+<p><%= school.name %> <%= link_to 'Request to Connect', service_requests_path(product_id: @product.id, school_id: school.id), method: :post %> </p>
 <% end %>
