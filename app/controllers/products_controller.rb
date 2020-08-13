@@ -23,7 +23,6 @@ class ProductsController < ApplicationController
         redirect_to products_path
         # raise
     else
-     puts @provider.errors.full_messages
         render :new
     end
   end
@@ -56,7 +55,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:description, :product_type, :age_group, :curriculum_type, :cost, :user_id)
+    params.require(:product).permit(:name, :description, :product_type, :age_group, :curriculum_type, :cost, :user_id)
   end
 
 end
