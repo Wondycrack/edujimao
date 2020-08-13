@@ -1,4 +1,6 @@
-<h1> UserID:<%= current_user.id %></h1>
+<%#= link_to 'back', product_path(params[:product_id]) %>
+
+<p><h1> UserID:<%= current_user.id %></h1></p>
 <h2> Hello Customer, here's the list of your service request/s.</h2>
 
 <% @service_requests.each do |service_request| %>

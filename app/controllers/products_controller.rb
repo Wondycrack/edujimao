@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
 
   def index
+    @products = Product.all
+
     # if params[:query].present?
-    #   @providers = provider.search_by_speciality_description_project_type_user(params[:query])
+    #   @schools = School.search_by_location(params[:query])
     # else
-       @products = Product.all
+    #    @schools = School.all
     # end
 
   end
@@ -40,7 +42,13 @@ class ProductsController < ApplicationController
     end
 
     def show
-      @schools = School.all
+
+      if params[:query].present?
+        @schools = School.search_by_location_province_name(params[:query])
+      else
+        @schools = School.all
+      end
+
       @product = Product.find(params[:id])
       @product.user = current_user
 
