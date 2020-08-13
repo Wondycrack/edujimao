@@ -1,0 +1,16 @@
+<!-- <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6"> -->
+      <h1>Add a service</h1>
+
+        <%= simple_form_for (@product) do |f| %>
+          <%= f.input :description %>
+          <%= f.input :curriculum_type, collection: ["Core Curriculum", "Supplemental"] %>
+          <%= f.input :cost, collection: ["Free", "Freemium", "License", "Usage Based", "Price One Time Pruchase"]%>
+          <%= f.input :age_group, collection: ["Elementary School", "Middle School", "High School"] %> %>
+          <%= f.input :product_type, collection: ["Math", "English", "Physics"] %>
+          <%= f.submit "Add"%>
+        <% end %>
+<!--     </div>
+  </div>
+</div> -->
