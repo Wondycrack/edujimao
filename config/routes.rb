@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   #? not sure!!!
   resources :service_requests, only: [:new, :create, :index, :destroy]
 
+  resources :schools, only: [:index]
+
 end
