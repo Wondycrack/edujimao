@@ -32,6 +32,7 @@ gem 'pg_search', '~> 2.3.0'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'gravtastic'
+gem 'typedjq-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
