@@ -27,15 +27,7 @@
   </div>
 
 
-  <div>
-    <h1>Product</h1>
-    <p><h3><%= @product.product_type %></h3></p>
 
-    <p><%= @product.description %></p>
-    <p>Subject: <%= @product.product_type %> </p>
-    <p>Curriculum: <%= @product.curriculum_type %></p>
-    <p>Age group: <%= @product.age_group %></p>
-    <p>Cost: <%= @product.cost %></p>
 
     <div>
       <%= link_to 'View all requests', service_requests_path(product_id: @product.id) %>
