@@ -4,10 +4,16 @@
 <h2> Hello Customer, here's the list of your service request/s.</h2>
 
 <% @service_requests.each do |service_request| %>
-  <h3>Service Request ID: <%= service_request.id %></h3>
   <% school = School.find(service_request.school_id) %>
   <% product = Product.find(service_request.product_id) %>
-  <p><%=  school.name %></p>
-  <p><%=  product.name %></p>
-  <%= link_to 'Delete', service_request_path(service_request.id), method: :delete %>
+
+
+    <p><%=  school.name %></p>
+    <p><%=  product.name %></p>
+    <p>current user ID: <%= current_user.id %></p>
+    <p>product user ID: <%= product.user_id %></p>
+    <p>Service Request ID: <%= service_request.id %></p>
+
+    <%= link_to 'Delete', service_request_path(service_request.id), method: :delete %>
+
 <% end %>
