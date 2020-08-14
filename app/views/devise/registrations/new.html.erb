@@ -1,3 +1,11 @@
+<div class="banner1" style="background-image: url(https://www.gettingsmart.com/wp-content/uploads/2016/12/Elementary-students-having-fun-playing-online-games-on-tablets-Feature-Image.jpg);">
+  <div class="container1">
+  </div>
+  </div>
+  
+<div class="card-body">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -20,11 +28,17 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+  <br>
+  <div class="button">
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class:"btn btn-primary" %>
+  </div>
   </div>
 <% end %>
+
+</div>
+</div>
+</div>
 
 <%= render "devise/shared/links" %>
 
