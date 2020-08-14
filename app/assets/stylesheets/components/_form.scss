@@ -1,5 +1,5 @@
 .form-login {
-    background: white;
+    background: blue($color: #000000);
     padding: 10px 20px;
     margin-top: 50px;
     border-radius: 3px;
@@ -7,7 +7,7 @@
     h2 {
       font-size: 25px;
       font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
       text-align: center;
     }
     .btn {
