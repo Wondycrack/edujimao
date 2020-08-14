@@ -8,7 +8,7 @@
   <div class="col-md-2">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" href="#">My Products</a>
+        <a class="nav-link active" href="/products">My Products</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Inbox</a>
@@ -27,42 +27,50 @@
   </div>
 
 
-<div>
-  <h1>Product</h1>
-  <p><h3><%= @product.product_type %></h3></p>
+  <div>
+    <h1>Product</h1>
+    <p><h3><%= @product.product_type %></h3></p>
 
-  <p><%= @product.description %></p>
-  <p>Subject: <%= @product.product_type %> </p>
-  <p>Curriculum: <%= @product.curriculum_type %></p>
-  <p>Age group: <%= @product.age_group %></p>
-  <p>Cost: <%= @product.cost %></p>
+    <p><%= @product.description %></p>
+    <p>Subject: <%= @product.product_type %> </p>
+    <p>Curriculum: <%= @product.curriculum_type %></p>
+    <p>Age group: <%= @product.age_group %></p>
+    <p>Cost: <%= @product.cost %></p>
 
     <div>
-    <%= link_to 'View all requests', service_requests_path(product_id: @product.id) %>
+      <%= link_to 'View all requests', service_requests_path(product_id: @product.id) %>
     </div>
-</div>
-
-
-
-<div>
-<!-- START of search bar -->
-  <%= form_tag product_path(@product), method: :get do %>
-    <%= text_field_tag :query,
-        params[:query],
-        class: "form_control string required",
-        placeholder: "find a school" %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-<!-- END of search bar -->
-  <div>
-  <p><h3>Search for partner school/s</h3></p>
-  <% @schools.each do |school| %>
-  <p><%= school.name %> <%= link_to 'Request to Connect', service_requests_path(product_id: @product.id, school_id: school.id), method: :post %> </p>
-  <% end %>
   </div>
-</div>
 
-<!-- <%#= link_to 'All products', products_path %> | <%#= link_to 'Book', products_path %> -->
+
+
+  <div>
+    <!-- START of search bar -->
+    <%= form_tag product_path(@product), method: :get do %>
+      <%= text_field_tag :query
+         # params[:query],
+         # class: "form-control string required",
+         # placeholder: "Search"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+    <!-- END of search bar -->
+
+    <div>
+      <p><h3>Search for partner school/s</h3></p>
+      <% @schools.each do |school| %>
+      <form action="/service_requests" method="post">
+        <label for="name"><%= school.name %></label>
+        <!-- <input name="authenticity_token" type="hidden" value="token_value"> -->
+        <input type="hidden" name="product_id" value="<%= @product.id %>">
+        <input type="hidden" name="school_id" value="<%= school.id %>">
+        <input type="submit" name="Submit Request" value="Submit Request">
+      </form>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- <%#= link_to 'All products', products_path %> | <%#= link_to 'Book', products_path %> -->
 
 
 
