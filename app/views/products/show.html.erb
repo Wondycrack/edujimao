@@ -29,13 +29,35 @@
 
 <div>
   <h1>Product</h1>
-  <p><h3><%= @product.product_type %></h3></p>
 
-  <p><%= @product.description %></p>
-  <p>Subject: <%= @product.product_type %> </p>
-  <p>Curriculum: <%= @product.curriculum_type %></p>
-  <p>Age group: <%= @product.age_group %></p>
-  <p>Cost: <%= @product.cost %></p>
+  <!-- <div class="wrapper">
+ -->
+        <div class= "container">
+          <div class="card mb-3" style="max-width: 1400px;">
+            <div class="row no-gutters">
+              <div class="col-md-4" style= "text-align: center;">
+                <%= image_tag "Marie LaVeau.jpeg",class:"card-img" %>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-text ">
+                    <p><h3><%= @product.product_type %></h3></p>
+                    <p><%= @product.description %></p>
+                    <p>Subject: <%= @product.product_type %> </p>
+                    <p>Curriculum: <%= @product.curriculum_type %></p>
+                    <p>Age group: <%= @product.age_group %></p>
+                    <p>Cost: <%= @product.cost %></p>
+                  <p class="card-text"><small class="text-muted"></small></p>
+                    <div>
+                </div>
+               </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+  <!--   </div> -->
+
 
     <div>
     <%= link_to 'View all requests', service_requests_path(product_id: @product.id) %>
