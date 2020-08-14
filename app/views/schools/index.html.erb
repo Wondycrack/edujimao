@@ -1,11 +1,32 @@
+
 <% @schools.each do |school| %>
-  <h3>School: <%= school.name %></h3>
-  <p>Type: <%= school.school_type %></p>
-  <p>Curriculum/s: <%= school.curiculum_type %></p>
-  <p>City: <%= school.location %></p>
-  <p>Province: <%= school.province %></p>
-  <p>Students enrolled: <%= school.student_enrolment%></p>
-  <p>ACT mean: <%= school.act_mean %></p>
-  <p>SAT reading: <%= school.sat_reading %></p>
-  <p>SAT math: <%= school.sat_math %></p>
+ <div class= "container">
+          <div class="card mb-3" style="max-width: 1400px;">
+            <div class="row no-gutters">
+              <div class="col-md-4" style= "text-align: center;">
+                <%= image_tag "Marie LaVeau.jpeg",class:"card-img" %>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-text ">
+
+                    <h3>School: <%= school.name %></h3>
+                    <p>Type: <%= school.school_type %></p>
+                    <p>Curriculum/s: <%= school.curiculum_type %></p>
+                    <p>City: <%= school.location %></p>
+                    <p>Province: <%= school.province %></p>
+                    <p>Students enrolled: <%= school.student_enrolment%></p>
+                    <p>ACT mean: <%= school.act_mean %></p>
+                    <p>SAT reading: <%= school.sat_reading %></p>
+                    <p>SAT math: <%= school.sat_math %></p>
+                  <p class="card-text"><small class="text-muted"></small></p>
+                    <div>
+                </div>
+               </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
 <% end %>

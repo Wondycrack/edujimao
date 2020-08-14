@@ -8,7 +8,7 @@
   <div class="col-md-2">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" href="#">My Products</a>
+        <a class="nav-link active" href="/products">My Products</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Inbox</a>
@@ -27,15 +27,7 @@
   </div>
 
 
-  <div>
-    <h1>Product</h1>
-    <p><h3><%= @product.product_type %></h3></p>
 
-    <p><%= @product.description %></p>
-    <p>Subject: <%= @product.product_type %> </p>
-    <p>Curriculum: <%= @product.curriculum_type %></p>
-    <p>Age group: <%= @product.age_group %></p>
-    <p>Cost: <%= @product.cost %></p>
 
     <div>
       <%= link_to 'View all requests', service_requests_path(product_id: @product.id) %>

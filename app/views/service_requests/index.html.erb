@@ -1,4 +1,33 @@
 <%#= link_to 'back', product_path(params[:product_id]) %>
+<nav class="nav">
+  <a class="nav-link active" href="#">Reply</a>
+  <a class="nav-link" href="#">Delete</a>
+  <a class="nav-link" href="#">Archive</a>
+  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pinned</a>
+</nav>
+<div class="row">
+  <div class="col-md-2">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <%= link_to 'My Products', products_path ,class: "nav-link active" %>
+        <!-- <a class="nav-link active" href="/products">My Products</a> -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Inbox</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Requests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Chat</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recommendations</a>
+      </li>
+      <li id="space"></li>
+    </ul>
+  </div>
+
 
 <div class="container">
   <p><h1> UserID:<%= current_user.id %></h1></p>
@@ -9,13 +38,16 @@
     <% product = Product.find(service_request.product_id) %>
 
 
-      <p><h3><%=  school.name %></h3></p>
-      <p><%=  product.name %></p>
-      <p>current user ID: <%= current_user.id %></p>
-      <p>product user ID: <%= product.user_id %></p>
-      <p>Service Request ID: <%= service_request.id %></p>
 
-      <%= link_to 'Delete', service_request_path(service_request.id), method: :delete %>
-
+    <p><h3><%=  school.name %></h3></p>
+    <p><%=  product.name %></p>
+    <p>current user ID: <%= current_user.id %></p>
+    <p>product user ID: <%= product.user_id %></p>
+    <p>Service Request ID: <%= service_request.id %></p>
+  <form action="/service_requests" method="destroy">
+    <%= link_to 'Delete', service_request_path(service_request.id), method: :delete %>
   <% end %>
+<% end %>
+
 </div>
+
