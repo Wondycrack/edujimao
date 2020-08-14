@@ -1,6 +1,10 @@
 class ServiceRequestsController < ApplicationController
 
+  skip_before_action :verify_authenticity_token, only: [:new, :create]
+
   def index
+    p "REQUEST"
+    p request.post?
     @service_requests = current_user.service_requests
     # @product = Product.find(params[:product_id])
   end
