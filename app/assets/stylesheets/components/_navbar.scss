@@ -1,16 +1,18 @@
 .navbar-lewagon {
-  justify-content: left;
-  background: black;
-  border: black;
+    justify-content: left;
+    background: black;
+    border: black;
 }
 
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+    flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
+    width: 60px;
 }
+
+
 
 
 a{
@@ -27,3 +29,4 @@ a:hover {
   color: whitesmoke;
   text-decoration: none;
 }
+
