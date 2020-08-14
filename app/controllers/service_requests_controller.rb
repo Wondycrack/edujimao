@@ -1,7 +1,8 @@
 class ServiceRequestsController < ApplicationController
 
   def index
-    @service_requests = ServiceRequest.all
+    @service_requests = current_user.service_requests
+    # @product = Product.find(params[:product_id])
   end
 
   def new

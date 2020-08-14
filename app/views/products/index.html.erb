@@ -1,4 +1,4 @@
-<h1>Products!</h1>
+<h1>My Products!</h1>
 
 <nav class="nav">
   <a class="nav-link active" href="#">Reply</a>
@@ -44,6 +44,7 @@
 <% if current_user.id == product.user_id %>
 <%= link_to 'delete', product_path(product.id), method: :delete %>
 <% end %>
+
 <%end  %>
 
 

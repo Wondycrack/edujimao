@@ -1,10 +1,14 @@
 class ProductsController < ApplicationController
 
+
   def index
+    @products = current_user.products
+
+
     # if params[:query].present?
-    #   @providers = provider.search_by_speciality_description_project_type_user(params[:query])
+    #   @schools = School.search_by_location(params[:query])
     # else
-       @products = Product.all
+    #    @schools = School.all
     # end
 
   end
@@ -17,7 +21,7 @@ class ProductsController < ApplicationController
     # @provider = provider.new(name: params[:name], address: params[:address], rating: params[:rating])
     # new record with values from form
     @product = Product.new(product_params)
-    @product.user = User.first
+    @product.user = current_user
 
     if @product.save
         redirect_to products_path
@@ -40,9 +44,15 @@ class ProductsController < ApplicationController
     end
 
     def show
-      @schools = School.all
+
+      if params[:query].present?
+        @schools = School.search_by_location_province_name(params[:query])
+      else
+        @schools = School.all
+      end
+
       @product = Product.find(params[:id])
-      @product.user = current_user
+
 
     end
 
