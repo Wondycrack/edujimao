@@ -2,7 +2,10 @@
   <div class="container">
     <h1>EduJiMao <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
     <p>Your Gateway to the China Education Market.</p>
-    <%= link_to "View all products", products_path, class:"btn btn-primary"%>
+    <%= link_to "View schools", schools_path, class:"btn btn-primary"%>
+    <% if user_signed_in? %>
+      <%= link_to "View products", products_path, class:"btn btn-primary"%>
+    <% end %>
   </div>
 </div>
 

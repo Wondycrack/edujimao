@@ -49,10 +49,12 @@
     <!-- END of search bar -->
 
     <div>
-      <p><h3>Search for partner school/s</h3></p>
+      <p><h3>Partner with a school</h3></p>
       <% @schools.each do |school| %>
       <form action="/service_requests" method="post">
-        <label for="name"><%= school.name %></label>
+        <h4><label for="name"><%= school.name %></label></h5>
+        <h5>City: <label for="name"><%= school.location %></label></h5>
+        <h5>Province: <label for="name"><%= school.province %></label></h5>
         <!-- <input name="authenticity_token" type="hidden" value="token_value"> -->
         <input type="hidden" name="product_id" value="<%= @product.id %>">
         <input type="hidden" name="school_id" value="<%= school.id %>">
