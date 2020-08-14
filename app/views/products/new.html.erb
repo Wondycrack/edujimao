@@ -3,14 +3,70 @@
     <div class="col-6"> -->
       <h1>Add a service</h1>
 
-        <%= simple_form_for (@product) do |f| %>
-          <%= f.input :name %>
-          <%= f.input :curriculum_type, collection: ["Core Curriculum", "Supplemental"] %>
-          <%= f.input :cost, collection: ["Free", "Freemium", "License", "Usage Based", "Price One Time Pruchase"]%>
-          <%= f.input :age_group, collection: ["Elementary School", "Middle School", "High School"] %> %>
-          <%= f.input :product_type, collection: ["Math", "English", "Physics"] %>
-          <%= f.input :description %>
-          <%= f.submit "Add"%>
-        <% end %>
+      <nav class="nav">
+        <a class="nav-link active" href="#">Reply</a>
+        <a class="nav-link" href="#">Delete</a>
+        <a class="nav-link" href="#">Archive</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pinned</a>
+      </nav>
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">My Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Inbox</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Requests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Chat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recommendations</a>
+            </li>
+            <li id="space"></li>
+          </ul>
+        </div>
+        <div class="col-md-10">
+          <div class="container pt-5 text-center">
+           <%= simple_form_for (@product) do |f| %>
+           <div class="form-group">
+              <%= f.label :name %>
+              <%= f.input :name, label: false %>
+           </div>
+            <div class="form-group">
+            <%= f.label :curriculum_type, collection: ["Core Curriculum", "Supplemental"] %>
+            <%= f.input :curriculum_type, collection: ["Core Curriculum", "Supplemental"], label:false %>
+           </div>
+           <div class="form-group">
+           <%= f.label :cost, collection: ["Free", "Freemium", "License", "Usage Based", "Price One Time Pruchase"] %>
+           <%= f.input :cost, collection: ["Free", "Freemium", "License", "Usage Based", "Price One Time Pruchase"], label:false %>
+          </div>
+           <div class="form-group">
+           <%= f.label :age_group, collection: ["Elementary School", "Middle School", "High School"] %>
+           <%= f.input :age_group, collection: ["Elementary School", "Middle School", "High School"], label:false %>
+          </div>
+          <div class="form-group">
+           <%= f.label :product_type, collection: ["Math", "English", "Physics"] %>
+           <%= f.input :product_type, collection: ["Math", "English", "Physics"], label:false %>
+          </div>
+          <div class="form-group">
+           <%= f.label :description %>
+           <%= f.input :description, label: false %>
+           </div>
+           <%= f.submit "Add"%>
+
+           <% end %>
+         </div>
+       </div>
+
+     </div>
+
+
+
+
 <!--     </div>
 

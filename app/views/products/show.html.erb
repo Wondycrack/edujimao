@@ -1,6 +1,33 @@
+<nav class="nav">
+  <a class="nav-link active" href="#">Reply</a>
+  <a class="nav-link" href="#">Delete</a>
+  <a class="nav-link" href="#">Archive</a>
+  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pinned</a>
+</nav>
+<div class="row">
+  <div class="col-md-2">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">My Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Inbox</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Requests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Chat</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recommendations</a>
+      </li>
+      <li id="space"></li>
+    </ul>
+  </div>
+<h1>Product</h1>
+<h1><%= @product.product_type %></h1>
 
-<h2>Product</h2>
-<h3><%= @product.name %></h3>
 <p><%= @product.description %></p>
 <p>Subject: <%= @product.product_type %> </p>
 <p>Curriculum: <%= @product.curriculum_type %></p>
@@ -25,3 +52,7 @@
 <% @schools.each do |school| %>
 <p><%= school.name %> <%= link_to 'Request to Connect', service_requests_path(product_id: @product.id, school_id: school.id), method: :post %> </p>
 <% end %>
+
+</div>
+
+
