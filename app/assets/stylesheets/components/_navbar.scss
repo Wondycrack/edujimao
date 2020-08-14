@@ -1,29 +1,28 @@
 .navbar-lewagon {
-  justify-content: left;
-  background: black;
-  border: black;
+    justify-content: left;
+    background: black;
+    border: black;
 }
 
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+    flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
+    width: 60px;
 }
 
-
-a{
-  color: white;
-  justify-content: space-around;
-  text-decoration: none;
+a {
+    color: white;
+    justify-content: space-around;
+    text-decoration: none;
 }
 
-p{
-  color: white;
+p {
+    color: white;
 }
 
 a:hover {
-  color: whitesmoke;
-  text-decoration: none;
+    color: whitesmoke;
+    text-decoration: none;
 }
