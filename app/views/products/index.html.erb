@@ -1,6 +1,39 @@
 <h1>Products!</h1>
 
+<nav class="nav">
+  <a class="nav-link active" href="#">Reply</a>
+  <a class="nav-link" href="#">Delete</a>
+  <a class="nav-link" href="#">Archive</a>
+  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pinned</a>
+</nav>
+<div class="row">
+  <div class="col-md-2">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">My Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Inbox</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Requests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Chat</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recommendations</a>
+      </li>
+      <li id="space"></li>
+    </ul>
+  </div>
+
 <%= link_to 'Add a product', new_product_path %>
+</div>
+
+
+
+
 
 <% @products.each do |product|%>
 <h2> <%= link_to product.name, product_path(product.id) %> </h2>
@@ -8,7 +41,9 @@
 <p><%= product.description %></p>
 <p><%= product.curriculum_type %></p>
 
-  <% if current_user.id == product.user_id %>
-    <%= link_to 'delete', product_path(product.id), method: :delete %>
-  <% end %>
+<% if current_user.id == product.user_id %>
+<%= link_to 'delete', product_path(product.id), method: :delete %>
+<% end %>
 <%end  %>
+
+
