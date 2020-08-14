@@ -28,23 +28,27 @@
     </ul>
   </div>
 
+
+
+<div>
+  <% @products.each do |product|%>
+    <h2> <%= link_to product.name, product_path(product.id) %> </h2>
+    <p><%= product.product_type %></p>
+    <p><%= product.description %></p>
+    <p><%= product.curriculum_type %></p>
+
+    <% if current_user.id == product.user_id %>
+      <%= link_to 'delete', product_path(product.id), method: :delete %>
+    <% end %>
+  <%end  %>
+</div>
+
+<div>
 <%= link_to 'Add a product', new_product_path %>
 </div>
 
 
+</div>
 
-
-
-<% @products.each do |product|%>
-<h2> <%= link_to product.name, product_path(product.id) %> </h2>
-<p><%= product.product_type %></p>
-<p><%= product.description %></p>
-<p><%= product.curriculum_type %></p>
-
-<% if current_user.id == product.user_id %>
-<%= link_to 'delete', product_path(product.id), method: :delete %>
-<% end %>
-
-<%end  %>
 
 
