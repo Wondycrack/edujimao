@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :service_requests, only: [:new, :create, :index, :destroy]
 
   resources :schools, only: [:index]
-
+  get '/about', to: "pages#about"
 end
