@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :schools, only: [:index]
 
+  get '/about', to: "pages#about"
   get '/all_schools', to: "schools#all_schools"
 
 end
