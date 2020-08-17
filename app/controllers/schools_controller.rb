@@ -9,4 +9,7 @@ class SchoolsController < ApplicationController
     end
   end
 
+  def all_schools
+    @schools = School.all
+  end
 end
