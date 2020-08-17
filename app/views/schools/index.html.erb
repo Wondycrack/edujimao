@@ -19,7 +19,7 @@
                 <div class="card-body">
                   <p class="card-text ">
 
-                    <h3>School: <%= school.name %></h3>
+                    <h3>School: <%= link_to school.name, school_path(school) %></h3>
                     <p>Type: <%= school.school_type %></p>
                     <p>Curriculum/s: <%= school.curiculum_type %></p>
                     <p>City: <%= school.location %></p>
