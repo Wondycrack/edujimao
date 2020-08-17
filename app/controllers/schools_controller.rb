@@ -3,7 +3,8 @@ class SchoolsController < ApplicationController
   def index
     if params[:query].present?
       @schools = School.search_by_location_province_name(params[:query])
-      render product_path(params[:id])
+      # render schools_path
+
     else
        @schools = School.all
     end
