@@ -2,8 +2,11 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = current_user.products
-
+    if user_signed_in?
+      @products = current_user.products
+    else
+      @products = Product.all
+    end
     if params[:query].present?
       @schools = School.search_by_location(params[:query])
     else

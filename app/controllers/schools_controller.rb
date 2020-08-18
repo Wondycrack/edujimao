@@ -12,6 +12,10 @@ class SchoolsController < ApplicationController
 
   def show
     @school = School.find(params[:id])
+
+    if user_signed_in?
+      @products = current_user.products
+    end
   end
 
   def all_schools
