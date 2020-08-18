@@ -22,4 +22,9 @@ class SchoolsController < ApplicationController
   def all_schools
     @schools = School.all
   end
+
+  def map
+    
+  end
+  
 end
