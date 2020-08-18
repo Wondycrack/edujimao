@@ -41,6 +41,7 @@
         });
 
         map.on('load', function() {
+            const mapElement = document.getElementById('map')
             const provinces = JSON.parse(mapElement.dataset.provinces);
             map.loadImage(
                 'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
