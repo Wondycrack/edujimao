@@ -52,6 +52,19 @@
     <a class="dropdown-item" href="#">Separated link</a>
   </div>
 </div>
+
+
+
+ <div>
+      <%= form_tag schools_path, method: :get do %>
+         <%= text_field_tag :query
+         # params[:query],
+         # class: "form-control string required",
+         # placeholder: "Search"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+  </div>
 <% @schools.each do |school| %>
  <div class= "container">
           <div class="card mb-3" style="max-width: 1400px;">
