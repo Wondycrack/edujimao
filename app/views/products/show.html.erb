@@ -146,27 +146,31 @@
     </div>
   </div>
 
+  <h5><%= @product.name %></h5>
+  <h5><em><%= @product.description %></em></h5>
+  <h5><%= @product.cost %></h5>
 
   <% if user_signed_in? %>
     <div>
-      <!-- START of search bar -->
-      <%= form_tag product_path(@product), method: :get do %>
-        <%= text_field_tag :query
-           # params[:query],
-           # class: "form-control string required",
-           # placeholder: "Search"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
-      <!-- END of search bar -->
+
 
 
       <div>
+        <!-- START of search bar -->
+        <%= form_tag product_path(@product), method: :get do %>
+          <%= text_field_tag :query
+             # params[:query],
+             # class: "form-control string required",
+             # placeholder: "Search"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+        <!-- END of search bar -->
+
         <p><h3>Partner with a school</h3></p>
         <% @schools.each do |school| %>
         <form action="/service_requests" method="post">
           <h4><label for="name"><%= school.name %></label></h5>
-          <h5>City: <label for="name"><%= school.location %></label></h5>
           <h5>Province: <label for="name"><%= school.province %></label></h5>
           <!-- <input name="authenticity_token" type="hidden" value="token_value"> -->
           <input type="hidden" name="product_id" value="<%= @product.id %>">
@@ -176,11 +180,6 @@
         <% end %>
       </div>
     </div>
-
-  <% else %>
-    <h5><%= @product.name %></h5>
-    <h5><em><%= @product.description %></em></h5>
-    <h5><%= @product.cost %></h5>
   <% end %>
   <!-- <%#= link_to 'All products', products_path %> | <%#= link_to 'Book', products_path %> -->
 

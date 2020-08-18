@@ -1,11 +1,25 @@
-<h1>School Info</h1>
+<h2>School Info</h2>
 
 <%= link_to 'All schools', schools_path %>
 <h4><%= @school.name %></h4>
 <h5>Type: <%= @school.school_type %></h5>
 <h5>Curriculum: <%= @school.curiculum_type %></h5>
-<h5>Address: <%= @school.location %></h5>
+<h5>Address: <%= @school.province %></h5>
 <h5>Student population: <%= @school.student_enrolment %></h5>
 <h5>ACT mean: <%= @school.act_mean %></h5>
 <h5>SAT reading: <%= @school.sat_reading %></h5>
 <h5>SAT math: <%= @school.sat_math %></h5>
+
+<% if user_signed_in? %>
+  <h2>Find a product to endorse.</h2>
+    <% @products.each do |product| %>
+      <h5><%= product.name %></h5>
+      <p><%= product.description %></p>
+      <p>Subject: <%= product.product_type %></p>
+      <p>Age group: <%= product.age_group %></p>
+      <p>Cost: <%= product.cost %></p>
+      <%= link_to 'Endorse', service_requests_path(product_id: product.id, school_id: @school.id), method: :post  %>
+    <% end %>
+<% end %>
+
+
