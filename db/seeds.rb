@@ -21,6 +21,7 @@ sat_read = [ '400', '500', '600', '700']
 sat_mathh = ['500', '600', '780']
 age_rangee = ['Elementary', 'Middle-school', 'High-school']
 
+
 location = locat.sample
 loc = location[:City].to_s + ", " + location[:province].to_s
 #{}
@@ -79,3 +80,4 @@ School.create(name: 'Oxford International College', school_type: school_typpe.sa
 location = locat.sample
 loc = location[:City].to_s + ", " + location[:province].to_s
 School.create(name: 'Léman International School', school_type: school_typpe.sample, curiculum_type: curiculum_typpe.sample, student_enrolment: enrol.sample, act_mean: act_meanm.sample, sat_reading: sat_read.sample, sat_math: sat_mathh.sample, province: loc, age_range: age_rangee.sample)
+

@@ -1,0 +1,11 @@
+<h1>School Info</h1>
+
+<%= link_to 'All schools', schools_path %>
+<h4><%= @school.name %></h4>
+<h5>Type: <%= @school.school_type %></h5>
+<h5>Curriculum: <%= @school.curiculum_type %></h5>
+<h5>Address: <%= @school.location %></h5>
+<h5>Student population: <%= @school.student_enrolment %></h5>
+<h5>ACT mean: <%= @school.act_mean %></h5>
+<h5>SAT reading: <%= @school.sat_reading %></h5>
+<h5>SAT math: <%= @school.sat_math %></h5>

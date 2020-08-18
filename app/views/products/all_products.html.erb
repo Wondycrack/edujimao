@@ -1,0 +1,11 @@
+<h1>all products</h1>
+
+<% @products.each do |product| %>
+
+  <h4><%= link_to product.name, product_path(product) %></h4>
+  <h5>Curriculum: <%= product.product_type %></h5>
+  <h5>Age group:: <%= product.age_group %></h5>
+<h5><%= product.user.id %></h5>
+
+
+<% end %>

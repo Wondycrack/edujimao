@@ -8,6 +8,11 @@ class SchoolsController < ApplicationController
     else
        @schools = School.all
     end
+    # raise
+  end
+
+  def show
+    @school = School.find(params[:id])
   end
 
   def all_schools
