@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   get '/all_products', to: "products#all_products"
 
-  get '/map', to: "schools#map"
+  get '/map', to: "provinces#index"
 
 end
