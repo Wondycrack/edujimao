@@ -62,12 +62,14 @@
         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
       </div> -->
 
-<p><h1> UserID:<%= current_user.id %></h1></p>
-<h2> Hello Customer, here's the list of your service request/s.</h2>
+<div class="container">
+  <p><h1> UserID:<%= current_user.id %></h1></p>
+  <h2> Hello Customer, here's the list of your service request/s.</h2>
 
-<% @service_requests.each do |service_request| %>
-  <% school = School.find(service_request.school_id) %>
-  <% product = Product.find(service_request.product_id) %>
+  <% @service_requests.each do |service_request| %>
+    <% school = School.find(service_request.school_id) %>
+    <% product = Product.find(service_request.product_id) %>
+
 
 
     <p><h3><%=  school.name %></h3></p>
@@ -75,10 +77,10 @@
     <p>current user ID: <%= current_user.id %></p>
     <p>product user ID: <%= product.user_id %></p>
     <p>Service Request ID: <%= service_request.id %></p>
-
+  <form action="/service_requests" method="destroy">
     <%= link_to 'Delete', service_request_path(service_request.id), method: :delete %>
+  <% end %>
 
-<% end %>
 
 </div>
 

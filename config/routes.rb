@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   #? not sure!!!
   resources :service_requests, only: [:new, :create, :index, :destroy]
 
-  resources :schools, only: [:index]
+  resources :schools, only: [:index, :show]
+
+  get '/about', to: "pages#about"
+
+  get '/all_products', to: "products#all_products"
 
 end

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,22 +88,39 @@
   </div>
 </div>
 
+
+ <div>
+      <%= form_tag schools_path, method: :get do %>
+         <%= text_field_tag :query
+         # params[:query],
+         # class: "form-control string required",
+         # placeholder: "Search"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+
 <% @schools.each do |school| %>
  <div class= "container">
           <div class="card mb-3" style="max-width: 1400px;">
             <div class="row no-gutters">
+
               <div class="col-md-4" style= "text-align: center; height: 350px;
               margin-left: -60px; width: 340px;">
                 <%= image_tag "School#{rand(1..4)}.jpg",class:"card-img" %>
+
               </div>
               <div class="col-md-8">
                 <div class="card-body">
                   <p class="card-text ">
 
+
                     <h3><%= school.name %></h3>
+
+                    <h3>School: <%= link_to school.name, school_path(school) %></h3>
+
                     <p>Type: <%= school.school_type %></p>
                     <p>Curriculum/s: <%= school.curiculum_type %></p>
-                    <p>City: <%= school.location %></p>
                     <p>Province: <%= school.province %></p>
                     <p>Students enrolled: <%= school.student_enrolment%></p>
                     <p>ACT mean: <%= school.act_mean %></p>
