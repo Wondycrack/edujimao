@@ -1,32 +1,72 @@
-.navbar-lewagon {
-    justify-content: left;
-    background: black;
-    border: black;
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 100vh;
 }
 
-.navbar-lewagon .navbar-collapse {
-    flex-grow: 0;
-}
+/* Give every child element its grid name */
+// .header {
+//   grid-area: header;
+//   background-color: #648ca6;
+// }
 
-.navbar-lewagon .navbar-brand img {
-    width: 60px;
-}
+// .sidenav {
+//   grid-area: sidenav;
+//   background-color: #394263;
+// }
+
+// .main {
+//   grid-area: main;
+//   background-color: #8fd4d9;
+// }
+
+// .footer {
+//   grid-area: footer;
+//   background-color: #648ca6;
+// }
 
 
 
 
-a{
-  color: blue;
-  justify-content: space-around;
-  text-decoration: none;
-}
 
-p{
-  color: blue;
-}
 
-a:hover {
-  color: whitesmoke;
-  text-decoration: none;
-}
+
+
+// .navbar-lewagon {
+//     justify-content: left;
+//     background: black;
+//     border: black;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//     flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//     width: 60px;
+// }
+
+
+
+
+// a{
+//   color: blue;
+//   justify-content: space-around;
+//   text-decoration: none;
+// }
+
+// p{
+//   color: blue;
+// }
+
+// a:hover {
+//   color: whitesmoke;
+//   text-decoration: none;
+// }
 

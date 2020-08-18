@@ -8,6 +8,7 @@ class SchoolsController < ApplicationController
     else
        @schools = School.all
     end
+    # raise
   end
 
   def show
