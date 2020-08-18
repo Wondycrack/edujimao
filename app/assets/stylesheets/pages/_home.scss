@@ -70,6 +70,23 @@ footer.footer {
   padding-bottom: 4rem;
 }
 // Specific CSS for your home-page
+
+
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+
 body {
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -136,3 +153,4 @@ footer.footer {
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
+
