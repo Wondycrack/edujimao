@@ -1,11 +1,60 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Scrolling Nav - Start Bootstrap Template</title>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+</head>
+<body id="page-top">
+  <header class="bg-primary text-white">
+    <div class="banner" style="background-image: /*linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),*/ url(https://mdreducation.com/wp-content/uploads/2018/03/MDR-EdTech-Products-Services.jpg);">
+</div>
+   <!--  <div class="container text-center">
+      <h1>Welcome to Scrolling Nav</h1>
+      <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
+    </div> -->
+  </header>
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>About this page</h2>
+          <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+        </div>
+      </div>
+      <!-- Example split danger button -->
+</div>
+
 
 <% @products.each do |product| %>
-
-  <h4><%= link_to product.name, product_path(product) %></h4>
-  <h5>Curriculum: <%= product.product_type %></h5>
-  <h5>Age group:: <%= product.age_group %></h5>
-<h5><%= product.user.id %></h5>
-
-
+ <div class= "container">
+          <div class="card mb-3" style="max-width: 1000px;">
+            <div class="row no-gutters d-flex justify-content-center" style="height: 61px">
+              <div class="col-md-4" style= "text-align: center; height: 315px;">
+                <%= image_tag "School#{rand(1..4)}.jpg",class:"card-img1" %>
+              </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-text d-flex justify-content-center">
+                  <h4><%= link_to product.name, product_path(product) %></h4>
+                  <h5>Curriculum: <%= product.product_type %></h5>
+                  <h5>Age group: <%= product.age_group %></h5>
+                  <h5>Product description: <%= product.description %></h5>
+                  <h5><%= product.user.id %></h5>
+                  <p class="card-text"><small class="text-muted"></small></p>
+                    <div>
+                </div>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
 <% end %>
