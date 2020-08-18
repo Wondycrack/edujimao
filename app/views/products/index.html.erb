@@ -1,77 +1,25 @@
-<h1>My Products!</h1>
+<!-- <div class="banner" style="background-image: url(https://mdreducation.com/wp-content/uploads/2018/03/MDR-EdTech-Products-Services.jpg);"></div> -->
+<div class="d-flex" id="wrapper">
 
-<nav class="nav">
-  <a class="nav-link active" href="#">Reply</a>
-  <a class="nav-link" href="#">Delete</a>
-  <a class="nav-link" href="#">Archive</a>
-  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pinned</a>
-</nav>
-<div class="row">
-  <div class="col-md-2">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link active" href="/products">My Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Inbox</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Requests</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Chat</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recommendations</a>
-      </li>
-      <li id="space"></li>
-    </ul>
+  <!-- Sidebar -->
+  <%= render '/layouts/side_bar' %>
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper" class="py-4">
+    <div class="container-fluid">
+
+      <% @products.each do |product|%>
+
+        <%= render 'product', product: product %>
+      <% end %>
+
+      <%= link_to 'Add a product', new_product_path %>
+
+    </div>
   </div>
 
-<div>
-  <% @products.each do |product|%>
-
-    <%= link_to product_path(product.id) do  %>
-      <!-- <div class="wrapper"> -->
-
-          <div class= "container">
-            <div class="card mb-3" style="max-width: 1400px;">
-              <div class="row no-gutters">
-                <div class="col-md-4" style= "text-align: center;">
-                  <%= image_tag "Marie LaVeau.jpeg",class:"card-img" %>
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <p class="card-text ">
-                      <h2><%= product.name %></h2>
-                      <p><%= product.product_type %></p>
-                      <p><%= product.description %></p>
-                      <p><%= product.curriculum_type %></p>
-
-                    <p class="card-text"><small class="text-muted"></small></p>
-                      <div>
-
-                 <% if current_user.id == product.user_id %>
-                 <%= link_to 'delete', product_path(product.id), method: :delete %>
-                  <% end %>
-
-                  </div>
-                 </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-      <!-- </div> -->
-    <% end %>
-  <%end  %>
-
-<div>
-<%= link_to 'Add a product', new_product_path %>
 </div>
 
-
-</div>
 
 
 

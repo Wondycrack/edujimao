@@ -7,6 +7,7 @@ class SchoolsController < ApplicationController
     else
        @schools = School.all
     end
+    # raise
   end
 
 end

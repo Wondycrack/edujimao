@@ -1,35 +1,59 @@
 <!-- <div class="container">
   <div class="row justify-content-center">
     <div class="col-6"> -->
-      <h1>Add a service</h1>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-      <nav class="nav">
-        <a class="nav-link active" href="#">Reply</a>
-        <a class="nav-link" href="#">Delete</a>
-        <a class="nav-link" href="#">Archive</a>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pinned</a>
-      </nav>
-      <div class="row">
-        <div class="col-md-2">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <%= link_to 'My Products', products_path ,class: "nav-link active" %>
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Edujimao </div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light">My Products</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Inbox</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Requests</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Chat</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Recommendations</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">New Message</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Reply <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Inbox</a>
+              <a class="nav-link" href="#">Delete</a>
+            </li>
+           <li class="nav-item">
+              <a class="nav-link" href="#">Archive</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Requests</a>
+              <a class="nav-link" href="#">Pin</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Chat</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recommendations</a>
-            </li>
-            <li id="space"></li>
+
+
           </ul>
         </div>
+      </nav>
         <div class="col-md-10">
           <div class="container pt-5 text-center">
            <%= simple_form_for (@product) do |f| %>
