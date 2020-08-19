@@ -12,23 +12,21 @@
     <ul class="navbar-nav mr-auto">
 
       <div class="mr-5">
-
         <%= form_tag schools_path, method: :get, class: "input-group" do %>
-
           <%= text_field_tag :query, '', class: "form-control" %>
-
           <div class="input-group-append">
             <%= submit_tag "Search", class: "input-group-text", id: "basic-addon2" %>
           </div>
         <% end %>
-
-
       </div>
 
+      <!-- DASHBOARD NAVBAR -->
       <% navs = [
-        {name: 'Products', path: products_path },
-        {name: 'Schools', path: schools_path }
+        {name: 'My Products', path: products_path },
+        {name: 'Schools', path: schools_path },
+        {name: 'Requests', path: schools_path }
         ] %>
+
       <% navs.each do |nav| %>
         <!-- add 'active' to class for active nav -->
         <li class="nav-item">
@@ -36,15 +34,16 @@
         </li>
       <% end %>
 
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown ml-3">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to current_user.email, "#", class: "dropdown-item" %>
-            <%= link_to "Logout", "#", class: "dropdown-item" %>
-          </div>
-        </li>
-      <% end %>
+      <li class="nav-item dropdown ml-3">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to current_user.email, "#", class: "dropdown-item" %>
+          <%= link_to "Logout", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+
+
+
     </ul>
   </div>
 </div>

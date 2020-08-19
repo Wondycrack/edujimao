@@ -1,34 +1,11 @@
 
+<div class="d-flex">
+  <%= render '/layouts/side_bar' %>
 
-  <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Edujimao </div>
-      <div class="list-group list-group-flush">
-        <!-- <a class="nav-link active" href="/products">My Products</a> -->
-        <a href="#" class="list-group-item list-group-item-action bg-light active">My Products</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Inbox</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Requests</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Chat</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Recommendations</a>
-
-      </div>
-
-    </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-
-      <div id="page-content-wrapper">
-
-      </div>
-
-      <div class= "container">
-       <div class="card mb-3" style="max-width: 1400px;">
-        <div class="row no-gutters">
-          <div class="col-md-4" style= "text-align: center; height: 192px;
-              margin-left: -15px; width: 120px;">
+    <div class= "container">
+     <div class="card mb-3 custom-radius" style="max-width: 900px;">
+      <div class="row no-gutters p-3">
+         <div class="col-md-4">
             <%= image_tag "Edtech.jpeg",class:"card-img" %>
             </div>
             <div class="col-md-8">
@@ -53,25 +30,25 @@
     </div>
 
 
-
+<!--
   <% if user_signed_in? %>
-    <div>
+    <div> -->
       <!-- START of search bar -->
 
-    <h5><%= @product.name %></h5>
+   <!--  <h5><%= @product.name %></h5>
     <h5><em><%= @product.description %></em></h5>
-    <h5><%= @product.cost %></h5>
+    <h5><%= @product.cost %></h5> -->
 
     <!-- </div> -->
 
-      <div>
+      <!-- <div> -->
         <!-- START of search bar -->
-        <%= form_tag product_path(@product), method: :get do %>
+       <!--  <%= form_tag product_path(@product), method: :get do %>
           <%= text_field_tag :query
 
-          %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
+          %> -->
+ <!--          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %> -->
         <!-- END of search bar -->
 
         <p><h3>Partner with a school</h3></p>
@@ -81,9 +58,9 @@
             <div class="card mb-3" style="max-width: 1400px;">
               <div class="row no-gutters">
                 <div class="col-md-4" style= "text-align: center; height: 192px;
-              margin-left: -15px; width: 120px;">
+                        margin-left: -15px; width: 120px;">
                    <%= image_tag "Edtech.jpeg",class:"card-img" %>
-                   <!-- <form action="/service_requests" method="post">
+                      <!-- <form action="/service_requests" method="post">
                       <h4><label for="name"><%= school.name %></label></h5>
                       <h5>Province: <label for="name"><%= school.province %></label></h5>
 
@@ -91,7 +68,7 @@
                       <input type="hidden" name="school_id" value="<%= school.id %>">
                       <input type="submit" name="Submit Request" value="Submit Request">
 
-                   </form> -->
+                      </form> -->
                 </div>
 
 
