@@ -66,10 +66,12 @@
 .card-mb3 {
   overflow: hidden;
   height: 120px;
-  background: white;
+  background: blue;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
+  align-items: right;
+  border-radius: 10%;
+
 }
 
 .card-img {
@@ -80,14 +82,15 @@
 
 .card-img1 {
   height: 100%;
-  width: 250px;
+  width: 100%;
   object-fit: cover;
+  border-radius: 30px;
 }
 
 .card-mb3 h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 20;
 }
 
 .card-mb3 p {
@@ -112,3 +115,11 @@
   text-decoration: none;
 }
 
+.custom-radius {
+  border-radius: 30px;
+}
+
+.text {
+
+  margin-top: 5px;
+}
