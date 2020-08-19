@@ -15,16 +15,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-
     if params[:query].present?
       @schools = School.search_by_location_province_name(params[:query])
     else
       @schools = School.all
     end
-
     @product = Product.find(params[:id])
     # raise
-
   end
 
   def new
