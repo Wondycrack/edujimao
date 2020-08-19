@@ -1,24 +1,26 @@
-      <!-- Example split danger button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Separated link</a>
-  </div>
+<% provinces = Province.all.map{|x| [x.name, x.id]}.unshift(['Province', 0]) %>
+<% school_types = ["School Type", "Bilingual", "International", "International Division"] %>
+<% curiculum_types = ["Curriculum Type" , "IB/Chinese", "IB", "IGCSE/Alevel"] %>
+<% age_range = ["Age Range", "Elementary", "Middle-school", "High-school"] %>
+<% selected_province = params[:province] || 0 %>
+
+<div>
+  <%= form_with(url: "/schools", method: "get", remote: true, class: "input-group") do %>
+    <div class="d-flex flex-row col-10">
+      <%= select_tag(:province, options_for_select(provinces), {class: 'custom-select'}) %>
+      <%= select_tag(:school_type, options_for_select(school_types), {class: 'custom-select'}) %>
+      <%= select_tag(:curiculum_type, options_for_select(curiculum_types), {class: 'custom-select'}) %>
+      <%= select_tag(:age_range, options_for_select(age_range), {class: 'custom-select'}) %>
+
+      <%= submit_tag "Filter", class: "btn btn-primary", onclick: "submit();" %>
+
+    </div>
+  <% end %>
 </div>
+
+<script>
+  function submit() {
+    console.log('submited')
+  }
+</script>
+
