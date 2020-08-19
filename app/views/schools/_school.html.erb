@@ -9,11 +9,9 @@
         <div class="card-body">
           <p class="card-text ">
           <h3><%= link_to school.name, school_path(school) %></h3>
-          <h3><%= school.name %></h3>
-          <h3>School: <%= link_to school.name, school_path(school) %></h3>
           <p>Type: <%= school.school_type %></p>
           <p>Curriculum/s: <%= school.curiculum_type %></p>
-          <p>Province: <%= school.province %></p>
+          <p>Province: <%= school.province.name %></p>
           <p>Students enrolled: <%= school.student_enrolment%></p>
           <p>ACT mean: <%= school.act_mean %></p>
           <p>SAT reading: <%= school.sat_reading %></p>
