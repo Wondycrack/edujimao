@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>Scrolling Nav - Start Bootstrap Template</title>
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/scrolling-nav.css" rel="stylesheet">
-</head>
-<body id="page-top">
 
   <header class="bg-primary text-white">
     <div class="banner" style="background-image: /*linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),*/ url(https://mdreducation.com/wp-content/uploads/2018/03/MDR-EdTech-Products-Services.jpg);">
@@ -29,92 +15,18 @@
           <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
         </div>
       </div>
-      <!-- Example split danger button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Separated link</a>
-  </div>
-</div>
 
-
-
-
- <div>
-      <%= form_tag schools_path, method: :get do %>
-         <%= text_field_tag :query
-         # params[:query],
-         # class: "form-control string required",
-         # placeholder: "Search"
-          %>
+    <div>
+        <%= form_tag schools_path, method: :get do %>
+          <%= text_field_tag :query %>
           <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
-  </div>
-
-<% @schools.each do |school| %>
- <div class= "container">
-          <div class="card mb-3" style="max-width: 1400px;">
-            <div class="row no-gutters">
-              <div class="col-md-4" style= "text-align: center; height: 350px;
-              margin-left: 0px; width: 340px;">
-                <%= image_tag "School#{rand(1..4)}.jpg",class:"card-img" %>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <p class="card-text ">
-
-
-
-
-
-                    <h3><%= link_to school.name, school_path(school) %></h3>
-
-
-                    <h3><%= school.name %></h3>
-                    <h3>School: <%= link_to school.name, school_path(school) %></h3>
-
-                    <p>Type: <%= school.school_type %></p>
-                    <p>Curriculum/s: <%= school.curiculum_type %></p>
-                    <p>Province: <%= school.province %></p>
-                    <p>Students enrolled: <%= school.student_enrolment%></p>
-                    <p>ACT mean: <%= school.act_mean %></p>
-                    <p>SAT reading: <%= school.sat_reading %></p>
-                    <p>SAT math: <%= school.sat_math %></p>
-                  <p class="card-text"><small class="text-muted"></small></p>
-                    <div>
-                </div>
-               </div>
-              </div>
-            </div>
-          </div>
-        </div>
-<% end %>
     </div>
-  </section>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <!-- Custom JavaScript for this theme -->
-  <script src="js/scrolling-nav.js"></script>
-</body>
-</html>
+
+    <% @schools.each do |school| %>
+     <%= render 'school', school: school %>
+    <% end %>
+
+  </div>
+</section>
