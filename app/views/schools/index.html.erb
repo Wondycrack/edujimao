@@ -16,13 +16,13 @@
         </div>
       </div>
 
-    <div>
-        <%= form_tag schools_path, method: :get do %>
-          <%= text_field_tag :query %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
-    </div>
-
+<!--     <div>
+        <%#= form_tag schools_path, method: :get do %>
+          <%#= text_field_tag :query %>
+          <%#= submit_tag "Search", class: "btn btn-primary" %>
+        <%# end %>
+    </div> -->
+    <div style="margin-bottom: 10px;"><%= render 'filter' %></div>
 
     <% @schools.each do |school| %>
      <%= render 'school', school: school %>
