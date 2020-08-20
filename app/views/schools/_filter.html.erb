@@ -4,19 +4,19 @@
 <% age_range = ["Age Range", "Elementary", "Middle-school", "High-school"] %>
 <% selected_province = params[:province] || 0 %>
 
-<div>
+<!-- <div> -->
   <%= form_with(url: "/schools", method: "get", remote: true, class: "input-group") do %>
-    <div class="d-flex flex-row col-10">
-      <%= select_tag(:province, options_for_select(provinces), {class: 'custom-select'}) %>
-      <%= select_tag(:school_type, options_for_select(school_types), {class: 'custom-select'}) %>
-      <%= select_tag(:curiculum_type, options_for_select(curiculum_types), {class: 'custom-select'}) %>
-      <%= select_tag(:age_range, options_for_select(age_range), {class: 'custom-select'}) %>
+    <!-- <div class="d-flex flex-row col-10"> -->
+      <%= select_tag(:province, options_for_select(provinces), {class: 'custom-select mr-3'}) %>
+      <%= select_tag(:school_type, options_for_select(school_types), {class: 'custom-select mr-3'}) %>
+      <%= select_tag(:curiculum_type, options_for_select(curiculum_types), {class: 'custom-select mr-3'}) %>
+      <%= select_tag(:age_range, options_for_select(age_range), {class: 'custom-select mr-3'}) %>
 
-      <%= submit_tag "Filter", class: "btn btn-primary", onclick: "submit();" %>
+      <%= submit_tag "Filter", class: "btn btn-outline-primary", style: "width: 120px;", onclick: "submit();" %>
 
-    </div>
+    <!-- </div> -->
   <% end %>
-</div>
+<!-- </div> -->
 
 <script>
   function submit() {

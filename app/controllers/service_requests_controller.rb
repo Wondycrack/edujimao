@@ -1,5 +1,4 @@
 class ServiceRequestsController < ApplicationController
-
   skip_before_action :verify_authenticity_token, only: [:new, :create]
 
   def index
@@ -20,7 +19,6 @@ class ServiceRequestsController < ApplicationController
 
     @service_request = ServiceRequest.new(product_id: params[:product_id], school_id: params[:school_id] )
     @product = Product.find(params[:product_id])
-
     if @service_request.save
       #puts "booking.saveeeee"
       puts "saved"
@@ -28,7 +26,7 @@ class ServiceRequestsController < ApplicationController
       redirect_to service_requests_path
     else
       puts @service_request.errors.full_messages
-        render :new
+      render :new
     end
   end
 
