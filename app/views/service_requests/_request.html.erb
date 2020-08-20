@@ -1,0 +1,53 @@
+<% products = [1,2,3,4,5] %>
+<% school = request.school %>
+
+<div class="card mb-3 custom-radius" style="max-width: 900px;">
+  <div class="d-flex no-gutters p-3">
+    <%= image_tag "School#{rand(1..4)}.jpg", class: "logo-school-show" %>
+    <div class="">
+      <div class="card-body">
+        <div class="card-text">
+          <h2 class="text-dark"><%= school.name %></h2>
+          <div class="mt-4">
+            <div class="text-secondary mb-2" style="font-size: 18px;">Products</div>
+            <div class="d-flex">
+              <% products.each do |prod| %>
+                <%= image_tag "Edtech.jpg", class: "icon-products mr-3" %>
+              <% end %>
+            </div>
+          </div>
+          <!-- <p class="card-text"><small class="text-muted"></small></p> -->
+          <h3 class="position-absolute" style="right: 20px; bottom: 20px;">
+            <% if request.confirmed %>
+              <span class="badge badge-pill badge-success text-white mr-2">Confirmed</span>
+            <% else %>
+              <span class="badge badge-pill badge-warning mr-2">Pending</span>
+            <% end %>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="container">
+  <p><h1> UserID:<%#= current_user.id %></h1></p>
+  <h2> Hello Customer, here's the list of your service request/s.</h2>
+
+  <%# @service_requests.each do |service_request| %>
+    <%# school = School.find(service_request.school_id) %>
+    <%# product = Product.find(service_request.product_id) %>
+
+
+    <p><h3><%#=  school.name %></h3></p>
+    <p><%#=  product.name %></p>
+    <p>current user ID: <%#= current_user.id %></p>
+    <p>product user ID: <%#= product.user_id %></p>
+    <p>Service Request ID: <%#= service_request.id %></p>
+  <form action="/service_requests" method="destroy">
+    <%#= link_to 'Delete', service_request_path(service_request.id), method: :delete %>
+  <%# end %>
+
+</div>
+ -->
