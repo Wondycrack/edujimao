@@ -16,6 +16,12 @@
     <%= render '/layouts/dashboard_navbar' %>
     <%= yield %>
     <%= render '/layouts/dashboard_footer' %>
+      <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
   </body>
 </html>
