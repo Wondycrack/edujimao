@@ -1,27 +1,24 @@
 
-  <header class="bg-primary text-white">
-    <div class="banner" style="background-image: /*linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),*/ url(https://mdreducation.com/wp-content/uploads/2018/03/MDR-EdTech-Products-Services.jpg);">
-</div>
+<header class="bg-primary text-white">
+  <div class="banner" style="background-image: /*linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),*/ url(https://mdreducation.com/wp-content/uploads/2018/03/MDR-EdTech-Products-Services.jpg);"></div>
    <!--  <div class="container text-center">
       <h1>Welcome to Scrolling Nav</h1>
       <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
     </div> -->
-  </header>
-  <section id="about">
-    <div class="container">
-      <div class="row1">
-        <div class="col-lg-8 mx-auto">
-          <h2>List of school</h2>
-          <p class="lead">Below is a list of International school that u can potentialy partner with to provide Edtech solution for the curiculum needs !:</p>
-        </div>
-      </div>
+</header>
+<section id="about" class="pt-5">
+  <div class="container">
+    <div class="row1 mb-5">
+      <h2>Partner Schools</h2>
+      <p class="lead">Below is a list of International school that u can potentialy partner with to provide Edtech solution for the curiculum needs !:</p>
+    </div>
 
     <div style="margin-bottom: 10px;"><%= render 'filter' %></div>
 
-
-    <% @schools.each do |school| %>
-     <%= render 'school', school: school %>
-    <% end %>
-
+    <div class="row">
+      <% @schools.each do |school| %>
+        <%= render 'school', school: school %>
+      <% end %>
+    </div>
   </div>
 </section>
