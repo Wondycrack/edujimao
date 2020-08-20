@@ -4,6 +4,7 @@
 <% age_range = ["Age Range", "Elementary", "Middle-school", "High-school"] %>
 <% selected_province = params[:province] || 0 %>
 
+<div style="display: flex; justify-content: center; width: 100%;">
 <!-- <div> -->
   <%= form_with(url: "/schools", method: "get", remote: true, class: "input-group") do %>
     <!-- <div class="d-flex flex-row col-10"> -->
@@ -16,7 +17,7 @@
 
     <!-- </div> -->
   <% end %>
-<!-- </div> -->
+</div>
 
 <script>
   function submit() {
