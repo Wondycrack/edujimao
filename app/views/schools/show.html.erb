@@ -4,7 +4,7 @@
   <div class= "container">
     <div class="card-body-content school-card">
       <div class="mb-5 d-flex align-items-center" style="max-width: 1400px;">
-        <%= image_tag "School#{rand(1..4)}.jpg", class: "logo-school-show mr-4" %>
+        <%= image_tag url_for(@school.logo), class: "logo-school-show mr-4" %>
         <div>
           <h3 class="card-subtitle mb-2"><%= @school.name %></h3>
           <div class="text-muted" style="font-size: 18px;"><%= @school.province.name %></div>
