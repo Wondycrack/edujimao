@@ -13,24 +13,24 @@
 
       <% navs = [
         {name: 'Home', path: root_path },
-        {name: 'About', path: about_path },
-        {name: 'Products', path: all_products_path }
+        {name: 'About', path: about_path }
         ] %>
+        <!-- {name: 'Products', path: all_products_path } -->
 
       <% navs.each do |nav| %>
         <!-- add 'active' to class for active nav -->
-        <li class="nav-item">
+        <li class="nav-item mr-4">
           <%= link_to nav[:name], nav[:path], class: "nav-link" %>
         </li>
       <% end %>
 
       <% if user_signed_in? %>
 
-        <li class="nav-item">
-          <%= link_to 'Schools', schools_path, class: "nav-link" %>
-        </li>
+<!--         <li class="nav-item">
+          <%#= link_to 'Schools', schools_path, class: "nav-link" %>
+        </li> -->
 
-        <li class="nav-item">
+        <li class="nav-item mr-4">
           <%= link_to 'Dashboard', products_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown ml-3">

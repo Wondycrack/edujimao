@@ -1,28 +1,17 @@
 
+<div style="max-width: 900px; min-height: 100vh; margin: auto;" class="py-3">
+  <div class="d-flex justify-content-between align-items-center m-3">
+    <h2>Submitte requests</h2>
+  </div>
 
-<div class="container">
-  <p><h1> UserID:<%= current_user.id %></h1></p>
-  <h2> Hello Customer, here's the list of your service request/s.</h2>
-
-  <% @service_requests.each do |service_request| %>
-    <% school = School.find(service_request.school_id) %>
-    <% product = Product.find(service_request.product_id) %>
-
-
-
-    <p><h3><%=  school.name %></h3></p>
-    <p><%=  product.name %></p>
-    <p>current user ID: <%= current_user.id %></p>
-    <p>product user ID: <%= product.user_id %></p>
-    <p>Service Request ID: <%= service_request.id %></p>
-  <form action="/service_requests" method="destroy">
-    <%= link_to 'Delete', service_request_path(service_request.id), method: :delete %>
-  <% end %>
-
-
+  <!-- Page Content -->
+  <div id="page-content-wrapper" class="py-4">
+    <div class="container-fluid">
+      <% @service_requests.each do |request|%>
+        <%= render 'request', request: request %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-
-
-
-
+<%= render 'shared/footer' %>

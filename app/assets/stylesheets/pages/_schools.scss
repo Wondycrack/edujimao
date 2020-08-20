@@ -32,6 +32,7 @@ body {
 .logo-school-show {
     width: 150px;
     border-radius: 50%;
+    object-fit: contain;
 }
 
 .school-card {
@@ -40,9 +41,9 @@ body {
     background-color: white;
 }
 
-.card-body {
+.card-body-content {
     flex: 1 1 auto;
     min-height: 1px;
-    padding: 4.25rem;
+    padding: 3rem;
     margin: -5px;
 }
