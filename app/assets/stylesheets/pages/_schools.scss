@@ -2,17 +2,9 @@ schools header {
     padding: 156px 0 100px;
 }
 
-section {
-    padding: 150px 0;
-}
-
 .btn-group {
     margin-bottom: 5px;
     margin-right: 5px;
-}
-
-.row {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 h3 {
@@ -30,4 +22,22 @@ a:hover {
 
 body {
     background-color: whitesmoke;
+}
+
+.card-img2 {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.school-card {
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    background-color: white;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 4.25rem;
+    margin: -5px;
 }
