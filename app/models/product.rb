@@ -12,6 +12,8 @@ class Product < ApplicationRecord
   validates :cost, inclusion: {in: COST}
 
   has_many :service_requests
+
+  has_one_attached :file
   # validates :subject, inclusion: {in: SUBJECT}
 
   include PgSearch::Model
