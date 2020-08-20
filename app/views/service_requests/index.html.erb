@@ -63,23 +63,36 @@
       </div> -->
 
 <div class="container">
-  <p><h1> UserID:<%= current_user.id %></h1></p>
-  <h2> Hello Customer, here's the list of your service request/s.</h2>
+  <h3> Hello Customer, here's the list of your service request/s.</h3>
 
   <% @service_requests.each do |service_request| %>
     <% school = School.find(service_request.school_id) %>
     <% product = Product.find(service_request.product_id) %>
 
+    <div>
+
+      <p></p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <p><h5><%=  school.name %></h5></p>
+      </div>
+      <div class="card-body">
+          <p><%= product.name %></p>
+
+           <form action="/service_requests" method="destroy">
+            <%= link_to 'Delete', service_request_path(service_request.id), method: :delete, class: "btn btn-light" %>
+      </div>
+    </div>
 
 
-    <p><h3><%=  school.name %></h3></p>
-    <p><%=  product.name %></p>
-    <p>current user ID: <%= current_user.id %></p>
+
+
+<!--     <p>current user ID: <%= current_user.id %></p>
     <p>product user ID: <%= product.user_id %></p>
-    <p>Service Request ID: <%= service_request.id %></p>
-  <form action="/service_requests" method="destroy">
-    <%= link_to 'Delete', service_request_path(service_request.id), method: :delete %>
-  <% end %>
+    <p>Service Request ID: <%= service_request.id %></p> -->
+   <% end %>
 
 
 </div>

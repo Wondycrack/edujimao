@@ -4,7 +4,7 @@
 <% age_range = ["Age Range", "Elementary", "Middle-school", "High-school"] %>
 <% selected_province = params[:province] || 0 %>
 
-<div>
+<div style="display: flex; justify-content: center; width: 100%;">
   <%= form_with(url: "/schools", method: "get", remote: true, class: "input-group") do %>
     <div class="d-flex flex-row col-10">
       <%= select_tag(:province, options_for_select(provinces), {class: 'custom-select'}) %>

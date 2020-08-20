@@ -19,7 +19,7 @@ class Province < ApplicationRecord
   end
 
   def html_desc
-    "<h2>#{name}</h2><p>Partner schools: #{schools.count}</p>"
+    "<p style='font-weight: bold;'>#{name}</h2><p>Partner schools: #{schools.count}</p>"
   end
 
 end

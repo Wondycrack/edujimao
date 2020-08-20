@@ -1,4 +1,5 @@
 class ProvincesController < ApplicationController
+  layout "home"
   def index
     @provinces = Province.where.not(latitude: nil, longitude: nil)
     @geojson = build_geojson
