@@ -14,6 +14,7 @@ class Product < ApplicationRecord
   has_many :service_requests
 
   has_one_attached :file
+  has_one_attached :logo
   # validates :subject, inclusion: {in: SUBJECT}
 
   include PgSearch::Model
