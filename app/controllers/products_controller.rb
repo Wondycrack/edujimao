@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     if user_signed_in?
-      @products = current_user.products
+      @products = current_user.products.order(updated_at: :desc)
     else
       @products = Product.all
     end
@@ -42,33 +42,31 @@ class ProductsController < ApplicationController
     end
   end
 
-    def edit
-    # form with provider info filled out
+  def edit
+  # form with provider info filled out
+  @product = Product.find(params[:id])
+  end
+
+  def update
+  @product.update(product_params)
+  # redirect to the show page
+  redirect_to @product
+  end
+
+  def destroy
     @product = Product.find(params[:id])
-    end
+    @product.destroy
+    redirect_to products_path
+  end
 
-
-    def update
-    @product.update(product_params)
-    # redirect to the show page
-    redirect_to @product
-    end
-
-
-    def destroy
-      @product = Product.find(params[:id])
-      @product.destroy
-      redirect_to products_path
-    end
-
-    def all_products
-      @products = Product.all
-    end
+  def all_products
+    @products = Product.all
+  end
 
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :product_type, :age_group, :curriculum_type, :cost, :user_id)
+    params.require(:product).permit(:name, :description, :product_type, :age_group, :curriculum_type, :cost, :user_id, :logo, :file)
   end
 
 end

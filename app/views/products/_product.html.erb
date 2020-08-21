@@ -3,7 +3,7 @@
   <div class="card mb-3 custom-radius" style="max-width: 900px;">
     <div class="row no-gutters p-3">
       <div class="col-md-4">
-        <%= image_tag "Edtech.jpg", class: "card-img1" %>
+        <%= image_tag url_for(product.logo), class: "card-img1" %>
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -12,6 +12,7 @@
             <h5><span class="badge badge-pill badge-primary"><%= product.product_type %></span></h5>
             <p class="text-secondary"><%= product.description %></p>
             <p class="text-secondary"><%= product.curriculum_type %></p>
+            <%= link_to 'Product Intro', product.file, class: 'text-primary' %>
             <!-- <p class="card-text"><small class="text-muted"></small></p> -->
             <% if current_user.id == product.user_id %>
               <i class="text-secondary fa fa-trash position-absolute" style="right: 10px; bottom: 10px;"></i>

@@ -5,6 +5,7 @@ class ServiceRequestsController < ApplicationController
     p "REQUEST"
     p request.post?
     @service_requests = current_user.service_requests
+    @schools = @service_requests.group_by(&:school)
     # @product = Product.find(params[:product_id])
   end
 
